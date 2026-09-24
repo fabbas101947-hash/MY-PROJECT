@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New Arrivals at INQUIRE Inventory - Discover the latest premium products and exclusive collections. Fresh inventory updated regularly.">
+    <meta name="keywords" content="new arrivals, new products, latest items, exclusive collections, INQUIRE inventory">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="New Arrivals - INQUIRE Inventory">
+    <meta property="og:description" content="Explore the latest premium products and exclusive collections at INQUIRE Inventory.">
+    <meta property="og:image" content="inquire.png">
+    <title>New Arrivals - INQUIRE Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new.css">
+    <link rel="icon" type="image/png" href="images/INQUIRE logo.jpeg">
+</head>
+<body>
+  <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="images/INQUIRE logo.jpeg" alt="INQUIRE STORE Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE STORE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+               <ul class="nav-links" id="navLinks">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="new.html" class="active">Shop Now</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="cart.html" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+  <li><a href="login.html"><i class="fa-solid fa-circle-user"></i></a></li>
+</ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <!-- Hero Section -->
+     <section class="hero-slider">
+
+    <div class="slider">
+
+        <figure id="sliderFigure">
+
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="images/inquire 16.jpg" alt="Inquire Store">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="images/image 4.jpg" alt="Inquire Store">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="images/image 3.jpg" alt="Inquire Store">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="images/image 7.jpg" alt="Inquire Store">
+            </div>
+
+        </figure>
+
+        <!-- Previous / Next buttons -->
+        <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
+        <button class="slider-arrow next" onclick="nextSlide()">›</button>
+
+        <!-- 4 dots -->
+        <div class="dots">
+
+            <span class="dot active" onclick="goToSlide(0)"></span>
+
+            <span class="dot" onclick="goToSlide(1)"></span>
+
+            <span class="dot" onclick="goToSlide(2)"></span>
+
+            <span class="dot" onclick="goToSlide(3)"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Now</h1>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals-section">
+        <div class="container">
+
+            <!-- Products Grid -->
+            <div class="new-products-grid">
+                <!-- Product 1 -->
+                <article class="new-product-card" data-product-id="1" data-size="M" data-color="Black">
+                    <div class="product-image-wrapper">
+                        <img src="images/inquire 8.jpeg" alt="New Premium Collection Product 1 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                     <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="new-product-card" data-product-id="2" data-size="M" data-color="Black">
+                    <div class="product-image-wrapper">
+                        <img src="images/image 7.jpg" alt="New Exclusive Collection Product 2 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="new-product-card" data-product-id="3" data-size="M" data-color="White">
+                    <div class="product-image-wrapper">
+                        <img src="images/image 3.jpg" alt="New Best Seller Product 3 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-bestseller">BEST SELLER</span>
+                    </div>
+                     <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="new-product-card" data-product-id="4" data-size="M" data-color="Black">
+                    <div class="product-image-wrapper">
+                        <img src="images/image 4.jpg" alt="New Premium Selection Product 4 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                   <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="new-product-card" data-product-id="5" data-size="M" data-color="White">
+                    <div class="product-image-wrapper">
+                        <img src="images/image 5.png" alt="New Exclusive Item Product 5 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                    <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="new-product-card" data-product-id="6" data-size="M" data-color="Black">
+                    <div class="product-image-wrapper">
+                        <img src="images/inquire 10.jpeg" alt="New Collection Product 6 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-sale">SALE 20%</span>
+                    </div>
+                   <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 7 -->
+                <article class="new-product-card" data-product-id="7" data-size="M" data-color="Navy">
+                    <div class="product-image-wrapper">
+                        <img src="images/inquire 11.jpeg" alt="New Exclusive Selection Product 7 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-new">NEW</span>
+                    </div>
+                   <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <!-- Product 8 -->
+                <article class="new-product-card" data-product-id="8" data-size="M" data-color="Grey">
+                    <div class="product-image-wrapper">
+                        <img src="images/Male Model Shirt 4.png" alt="New Premium Product 8 - INQUIRE Inventory" class="product-image">
+                        <span class="badge badge-bestseller">BEST SELLER</span>
+                    </div>
+                   <div class="product-info">
+                        <h3> Small </h3>
+                        <h2>Medium</h2>
+                        <h1>Large</h1>
+                        <span>XL</span>
+                        <div class="price-stack">
+                
+                            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                            <h6>Lounch discount 40%</h6>
+                            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                            <span class="After-discount">Price after discount: Rs.1980</span>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary btn-add">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn-secondary">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Login to Our Website</h2>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                <a href="login.html" class="btn btn-primary">Login</a>
+            </form>
+        </div>
+    </section>
+      <!-- FLOATING WHATSAPP BUTTON - START -->
+<div class="whatsapp-wrapper">
+  <!-- Chat Popup -->
+  <div class="whatsapp-popup" id="waPopup">
+    <div class="popup-header">
+      <span>Hi, how can I help you?</span>
+      <button class="popup-close" onclick="closeWaPopup()">&times;</button>
+    </div>
+  </div>
+  
+  <!-- WhatsApp Icon -->
+  <a href="https://wa.me/+923483969180?text=Hello%20INQUIRE%20STORE%2C%20I%20need%20help" target="_blank" class="whatsapp-btn" id="waBtn">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+      <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.372-.6.746-1.04 1.445-1.04 2.51 0 1.06.645 2.09 1.04 2.67.502.745 1.088 1.39 1.96 2.09 1.088.86 2.39 1.545 3.74 1.86.6.145 1.146.215 1.518.215.215 0 .43 0 .645-.072.43-.145.86-.6.86-1.06 0-.215-.073-.43-.215-.6zM12.04 2c-5.46 0-9.91 4.44-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.44 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+    </svg>
+  </a>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="new.html">Shop Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE Inventory. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="new.js"></script>
+</body>
+</html>

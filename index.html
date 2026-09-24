@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="INQUIRE STORE - Discover premium products and exclusive collections. Browse our wide range of quality items with fast delivery and competitive prices.">
+    <meta name="keywords" content="inventory, products, online store, quality items, shopping, exclusive collections">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="INQUIRE STORE - Premium Products & Collections">
+    <meta property="og:description" content="Explore premium products and exclusive collections at INQUIRE STORE.">
+    <meta property="og:image" content="inquire.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>INQUIRE STORE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/INQUIRE logo.jpeg">
+</head>
+
+<body>
+  
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="images/INQUIRE logo.jpeg" alt="INQUIRE STORE Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE STORE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                 <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="new.html">Shop Now</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-link">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-circle-user"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+     <section class="hero-slider">
+
+    <div class="slider">
+
+        <figure id="sliderFigure">
+
+            
+            <div class="slide">
+                <img src="images/image 5.png" alt="Inquire Store">
+            </div>
+
+           
+            <div class="slide">
+                <img src="images/image 4.jpg" alt="Inquire Store">
+            </div>
+
+           
+            <div class="slide">
+                <img src="images/image 3.jpg" alt="Inquire Store">
+            </div>
+
+           
+            <div class="slide">
+                <img src="images/image 7.jpg" alt="Inquire Store">
+            </div>
+
+        </figure>
+
+       
+        <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
+        <button class="slider-arrow next" onclick="nextSlide()">›</button>
+
+        <!-- 4 dots -->
+        <div class="dots">
+
+            <span class="dot active" onclick="goToSlide(0)"></span>
+
+            <span class="dot" onclick="goToSlide(1)"></span>
+
+            <span class="dot" onclick="goToSlide(2)"></span>
+
+            <span class="dot" onclick="goToSlide(3)"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="products-section">
+
+    <div class="section-title">
+        <p>OUR COLLECTION</p>
+        <h2>Featured Products</h2>
+        <span>Discover our latest styles</span>
+    </div>
+
+
+    <div class="products-grid" id="productsGrid">
+
+
+    </div>
+    <div class="product-grid">
+
+  
+<div class="product-card" data-id="MP0640P" data-name="Navy Blue Cut & Sew Stripe Polo Shirt with '93' Embroidery"
+    data-price="4590">
+    <div class="product-image">
+        <img src="images/Male Model Shirt.png" alt="Navy Blue Polo">
+    </div>
+    <div class="product-info">
+        <h3> Small </h3>
+        <h2>Medium</h2>
+        <h1>Large</h1>
+        <span>XL</span>
+        <div class="price-stack">
+
+            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+            <h6>Lounch discount 40%</h6>
+            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+            <span class="After-discount">Price after discount: Rs.1980</span>
+        </div>
+        <br>
+        <div class="sizes">
+            <a href="new.html" class="shop-btn">Shop Now →</a>
+
+        </div>
+    </div>
+</div>
+
+ 
+  <div class="product-card" data-id="MP0651P" data-name="Pack of 2 Plus Size Polo Shirts Maroon & Brown" data-price="8499">
+    <div class="product-image">
+      <img src="images/inquire 8.jpeg" alt="Pack of 2 Polo">
+    </div>
+     <div class="product-info">
+        <h3> Small </h3>
+        <h2>Medium</h2>
+        <h1>Large</h1>
+        <span>XL</span>
+        <div class="price-stack">
+            
+                                   <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                                   <h6>Lounch discount 40%</h6>
+                                   <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                                    <span class="After-discount">Price after discount: Rs.1980</span>
+                                </div>
+                                <br>
+      <div class="sizes">
+        <a href="new.html" class="shop-btn">Shop Now →</a>
+        
+      </div>
+    </div>
+  </div>
+
+  
+<div class="product-card" data-id="MSH311P" data-name="White Waffle Textured Resort Shirt" data-price="3690">
+    <div class="product-image">
+        <img src="images/inquire 7.jpeg" alt="White Resort Shirt">
+    </div>
+    <div class="product-info">
+        <h3> Small </h3>
+        <h2>Medium</h2>
+        <h1>Large</h1>
+        <span>XL</span>
+        <div class="price-stack">
+
+            <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+            <h6>Lounch discount 40%</h6>
+            <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+            <span class="After-discount">Price after discount: Rs.1980</span>
+        </div>
+        <br>
+        <div class="sizes">
+            <a href="new.html" class="shop-btn">Shop Now →</a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="product-card" data-id="MP0629P" data-name="Chocolate Brown Embroidered Polo Shirt" data-price="4890">
+    <div class="product-image">
+      <img src="images/inquire 6.jpeg" alt="Chocolate Brown Polo">
+    </div>
+     <div class="product-info">
+        <h3> Small </h3>
+        <h2>Medium</h2>
+        <h1>Large</h1>
+        <span>XL</span>
+        <div class="price-stack">
+            
+                                   <strong class="Actual-price">Actual Price: Rs 3300 </strong>
+                                   <h6>Lounch discount 40%</h6>
+                                   <strong class="Actual-price2">Actual Price: Rs 3300 </strong><br>
+                                    <span class="After-discount">Price after discount: Rs.1980</span>
+                                </div>
+                                <br>
+      <div class="sizes">
+        <a href="new.html" class="shop-btn">Shop Now →</a>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="images/inquire 5.jpeg" alt="Premium Products Category" class="category-image">
+                </div>
+                <div class="category-card">
+                    <img src="images/inquire 6.jpeg" alt="Exclusive Collections Category" class="category-image">
+                </div>
+                <div class="category-card">
+                    <img src="images/inquire 7.jpeg" alt="Special Offers Category" class="category-image">
+                </div>
+                <div class="category-card">
+                    <img src="images/inquire 8.jpeg" alt="Special Offers Category" class="category-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Login to Our Website</h2>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                <a href="login.html" class="btn btn-primary">Login</a>
+            </form>
+        </div>
+    </section>
+    
+<div class="whatsapp-wrapper">
+  <!-- Chat Popup -->
+  <div class="whatsapp-popup" id="waPopup">
+    <div class="popup-header">
+      <span>Hi, how can I help you?</span>
+      <button class="popup-close" onclick="closeWaPopup()">&times;</button>
+    </div>
+  </div>
+  
+  
+  <a href="https://wa.me/+923483969180?text=Hello%20INQUIRE%20STORE%2C%20I%20need%20help" target="_blank" class="whatsapp-btn" id="waBtn">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+      <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.372-.6.746-1.04 1.445-1.04 2.51 0 1.06.645 2.09 1.04 2.67.502.745 1.088 1.39 1.96 2.09 1.088.86 2.39 1.545 3.74 1.86.6.145 1.146.215 1.518.215.215 0 .43 0 .645-.072.43-.145.86-.6.86-1.06 0-.215-.073-.43-.215-.6zM12.04 2c-5.46 0-9.91 4.44-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.44 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+    </svg>
+  </a>
+</div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="images/INQUIRE logo.jpeg" alt="INQUIRE STORE Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE STORE</span>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="new.html">Shop Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE STORE. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

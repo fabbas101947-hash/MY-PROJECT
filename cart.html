@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopping Cart - INQUIRE Inventory | Review your items and proceed to secure checkout">
+    <meta name="keywords" content="shopping cart, checkout, payment, online shopping">
+    <meta name="author" content="INQUIRE Inventory">
+    <meta name="robots" content="index, follow">
+    <title>Shopping Cart - INQUIRE Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="icon" type="image/png" href="images/INQUIRE logo.jpeg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="images/INQUIRE logo.jpeg" alt="INQUIRE Inventory Logo" class="logo-img">
+                    <span class="logo-text">INQUIRE</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="new.html">Shop Now</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-link active">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <p>Review and manage your selected items</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-grid">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div id="cartItemsContainer" class="items-container">
+                        <!-- Cart items will be rendered here -->
+                    </div>
+                    <div id="emptyCartMessage" class="empty-cart-message" style="display: none;">
+                        <p>Your cart is empty</p>
+                        <a href="new.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">PKR 0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (10%):</span>
+                            <span id="tax">PKR 0.00</span>
+                        </div>
+                        <div class="summary-row divider">
+                            <span>Total:</span>
+                            <span id="total" class="total-amount">PKR 0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Buttons -->
+                    <button class="btn btn-primary btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+                    <a href="new.html" class="btn btn-secondary btn-continue">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Secure Checkout</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Tabs -->
+                <div class="payment-tabs">
+                    <button class="tab-button active" data-tab="payment-method">Payment Method</button>
+                    <button class="tab-button" data-tab="billing">Delivery Address</button>
+                    <button class="tab-button" data-tab="review">Review Order</button>
+                </div>
+
+                <!-- Payment Method Tab -->
+                <div id="payment-method" class="tab-content active">
+                    <h3>Select Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="method-option">
+                            <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cash-on-delivery" checked>
+                            <label for="cashOnDelivery" class="method-label">
+                                <span class="method-icon">COD</span>
+                                <span class="method-name">Cash on Delivery</span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="cod-note">Pay in cash when your order is delivered.</p>
+                </div>
+
+                <!-- Delivery Address Tab -->
+                <div id="billing" class="tab-content">
+                    <h3>Delivery Address</h3>
+                    <form id="deliveryForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input id="fullName" name="fullName" type="text" placeholder="John Doe" class="form-input" autocomplete="name" minlength="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input id="email" name="email" type="email" placeholder="john@example.com" class="form-input" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" name="phone" type="tel" placeholder="+92 300 1234567" class="form-input" autocomplete="tel" pattern="^(?:\+92\s?|0)3(?:[ -]?\d){9}$" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input id="address" name="address" type="text" placeholder="123 Main Street" class="form-input" autocomplete="street-address" minlength="5" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input id="city" name="city" type="text" placeholder="Lahore" class="form-input" autocomplete="address-level2" minlength="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input id="province" name="province" type="text" placeholder="Punjab" class="form-input" autocomplete="address-level1" minlength="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">Postal Code</label>
+                                <input id="postalCode" name="postalCode" type="text" placeholder="54000" class="form-input" autocomplete="postal-code" pattern="\d{5}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input id="country" name="country" type="text" value="Pakistan" class="form-input" autocomplete="country-name" readonly required>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Review Order Tab -->
+                <div id="review" class="tab-content">
+                    <h3>Order Review</h3>
+                    <div id="reviewItems" class="review-items">
+                        <!-- Items will be rendered here -->
+                    </div>
+                    <div class="review-summary">
+                        <div class="row">
+                            <span>Subtotal:</span>
+                            <span id="reviewSubtotal">PKR 0.00</span>
+                        </div>
+                        <div class="row">
+                            <span>Tax:</span>
+                            <span id="reviewTax">PKR 0.00</span>
+                        </div>
+                        <div class="row total">
+                            <span>Total:</span>
+                            <span id="reviewTotal">PKR 0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="backBtn">Back</button>
+                <button class="btn btn-primary" id="nextBtn">Next Step</button>
+                <button class="btn btn-success" id="completeBtn" style="display: none;">Place COD Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="new.html">Shop Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+              <!-- FLOATING WHATSAPP BUTTON - START -->
+<div class="whatsapp-wrapper">
+  <!-- Chat Popup -->
+  <div class="whatsapp-popup" id="waPopup">
+    <div class="popup-header">
+      <span>Hi, how can I help you?</span>
+      <button class="popup-close" onclick="closeWaPopup()">&times;</button>
+    </div>
+  </div>
+  
+  <!-- WhatsApp Icon -->
+  <a href="https://wa.me/+923483969180?text=Hello%20INQUIRE%20STORE%2C%20I%20need%20help" target="_blank" class="whatsapp-btn" id="waBtn">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+      <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.372-.6.746-1.04 1.445-1.04 2.51 0 1.06.645 2.09 1.04 2.67.502.745 1.088 1.39 1.96 2.09 1.088.86 2.39 1.545 3.74 1.86.6.145 1.146.215 1.518.215.215 0 .43 0 .645-.072.43-.145.86-.6.86-1.06 0-.215-.073-.43-.215-.6zM12.04 2c-5.46 0-9.91 4.44-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.44 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+    </svg>
+  </a>
+</div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 INQUIRE Inventory. All rights reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
