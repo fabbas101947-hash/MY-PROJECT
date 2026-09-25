@@ -577,6 +577,21 @@ a:hover {
   background: #f1f1f1;
 }
 
+.size-btn {
+    width: 42px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.size-btn:hover,
+.size-btn:focus {
+    background: #69320c;
+    color: white;
+    border-color: #69320c;
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .product-grid { grid-template-columns: repeat(3, 1fr); }
