@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $db   = "inquire_store";
-$user = "admins";
-$pass = "admin123";
+$user = "root";
+$pass = "";
 
 function db(){
     global $host, $db, $user, $pass;
