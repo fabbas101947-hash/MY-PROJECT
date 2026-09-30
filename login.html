@@ -41,46 +41,47 @@
     </form>
   </main>
   <script>
-    const loginForm = document.getElementById("loginForm");
-    const feedback = document.getElementById("feedback");
+const loginForm = document.getElementById("loginForm");
+const feedback = document.getElementById("feedback");
 
-    loginForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+loginForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      const validPassword = password.length >= 6;
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validPassword = password.length >= 6;
 
-      if (!validEmail || !validPassword) {
-        feedback.textContent = "Enter a valid email and password (minimum 6 characters).";
-        feedback.style.color = "#ff7b7b";
-        return;
-      }
+  if (!validEmail || !validPassword) {
+    feedback.textContent = "Enter a valid email and password (minimum 6 characters).";
+    feedback.style.color = "#ff7b7b";
+    return;
+  }
 
-      try {
-        const response = fetch('/api/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password }),
-        });
-
-        const body =  response.json();
-        if (!response.ok) {
-          throw new Error(body.error || 'Login failed.');
-        }
-
-        feedback.textContent = body.message || 'Login successful. Redirecting...';
-        feedback.style.color = '#8de1b8';
-        setTimeout(() => {
-          window.location.href = 'home.html';
-        }, 800);
-      } catch (error) {
-        feedback.textContent = error.message;
-        feedback.style.color = '#ff7b7b';
-      }
+  try {
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
     });
+
+    const body = await response.json();
+
+    if (!response.ok) {
+      throw new Error(body.error || 'Login failed.');
+    }
+
+    feedback.textContent = body.message || 'Login successful. Redirecting...';
+    feedback.style.color = '#8de1b8';
+    setTimeout(() => {
+      window.location.href = 'home.html';
+    }, 800);
+  } catch (error) {
+    feedback.textContent = error.message;
+    feedback.style.color = '#ff7b7b';
+  }
+});
   </script>
 </body>
 
