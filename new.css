@@ -208,6 +208,32 @@
     font-weight: 600;
     margin-bottom: 8px !important;
 }
+.size-options, .sizes, .size-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.size-options button, .size-btn, .sizes span {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size-options button.active, .size-options button:hover {
+  background: #4a1a1e;
+  color: white;
+  border-color: #4a1a1e;
+}
 
 .rating {
     color: var(--warning-color);
