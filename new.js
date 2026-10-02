@@ -481,4 +481,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 console.log('INQUIRE Inventory Website - Initialized Successfully with LocalStorage & Cart Management');
+document.getElementById('loadMoreBtn').addEventListener('click', function() {
+  let hiddenProducts = document.querySelectorAll('.product.hidden');
+
+  // Show next 4 products on each click
+  for (let i = 0; i < 4 && i < hiddenProducts.length; i++) {
+    hiddenProducts[i].classList.remove('hidden');
+  }
+
+  // Hide button if no more products
+  if (document.querySelectorAll('.product.hidden').length === 0) {
+    this.style.display = 'none';
+  }
+});
