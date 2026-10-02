@@ -208,6 +208,31 @@
     font-weight: 600;
     margin-bottom: 8px !important;
 }
+.size-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.size-btn {
+  display: inline-flex !important;
+  width: 42px !important;
+  height: 42px !important;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.size-btn.active, .size-btn:hover {
+  background: #4a1a1e;
+  color: #fff;
+  border-color: #4a1a1e;
+}
 
 .rating {
     color: var(--warning-color);
