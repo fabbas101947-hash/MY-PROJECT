@@ -261,33 +261,41 @@ function showAutoSaveNotice() {
 document.addEventListener('DOMContentLoaded', function() {
     const addToCartButtons = document.querySelectorAll('.btn-add, [data-add-to-cart]');
     
-    addToCartButtons.forEach((button, index) => {
+    addToCartButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Get product information from the card
             const card = this.closest('.product-card, .new-product-card');
-            if (card) {
-                const productName = card.querySelector('h3').textContent;
-                const priceValues = card.querySelector('.price').textContent.match(/\d+(?:\.\d+)?/g);
-                const imageUrl = card.querySelector('img').src;
-                const badge = card.querySelector('.badge')?.textContent || 'Featured';
-                
-                const product = {
-                    id: `${card.dataset.productId || `product-${Date.now()}`}-${card.dataset.size || ''}-${card.dataset.color || ''}`,
-                    product_id: Number(card.dataset.productId) || null,
-                    name: productName,
-                    price: parseFloat(priceValues?.at(-1)) || 99.99,
-                    image: imageUrl,
-                    category: badge,
-                    size: card.dataset.size || '',
-                    color: card.dataset.color || '',
-                    quantity: 1
-                };
-                
-                StorageManager.addToCart(product);
-                showNotification(`${productName} added to cart!`, 'success');
+            const image = card?.querySelector('img');
+            const priceText = card?.querySelector('.price, .After-discount')?.textContent;
+            const priceValues = priceText?.match(/\d+(?:\.\d+)?/g);
+            const price = priceValues ? parseFloat(priceValues[priceValues.length - 1]) : NaN;
+
+            if (!card || !image || !Number.isFinite(price)) {
+                showNotification('Unable to add this product to your cart.', 'error');
+                return;
             }
+
+            const productName = card.dataset.name || card.querySelector('h3')?.textContent.trim() || image.alt;
+            const badge = card.querySelector('.badge')?.textContent.trim() || 'Featured';
+            const imageKey = image.getAttribute('src').split('/').pop().replace(/\.[^.]+$/, '').replace(/[^a-z0-9_-]/gi, '-');
+            const productId = card.classList.contains('new-product-card')
+                ? `new-${card.dataset.productId || 'product'}-${imageKey}`
+                : card.dataset.productId || `product-${Date.now()}`;
+            const product = {
+                id: `${productId}-${card.dataset.size || ''}-${card.dataset.color || ''}`,
+                product_id: Number(card.dataset.productId) || null,
+                name: productName,
+                price,
+                image: image.src,
+                category: badge,
+                size: card.dataset.size || '',
+                color: card.dataset.color || '',
+                quantity: 1
+            };
+
+            StorageManager.addToCart(product);
+            showNotification(`${productName} added to cart!`, 'success');
         });
     });
 });
@@ -483,16 +491,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 console.log('INQUIRE Inventory Website - Initialized Successfully with LocalStorage & Cart Management');
-document.getElementById('loadMoreBtn').addEventListener('click', function() {
-  let hiddenProducts = document.querySelectorAll('.product.hidden');
+const loadMoreButton = document.getElementById('loadMoreBtn');
+if (loadMoreButton) {
+    loadMoreButton.addEventListener('click', function() {
+        const hiddenProducts = document.querySelectorAll('.product.hidden');
 
-  // Show next 4 products on each click
-  for (let i = 0; i < 4 && i < hiddenProducts.length; i++) {
-    hiddenProducts[i].classList.remove('hidden');
-  }
+        for (let i = 0; i < 4 && i < hiddenProducts.length; i++) {
+            hiddenProducts[i].classList.remove('hidden');
+        }
 
-  // Hide button if no more products
-  if (document.querySelectorAll('.product.hidden').length === 0) {
-    this.style.display = 'none';
-  }
-});
+        if (document.querySelectorAll('.product.hidden').length === 0) {
+            this.style.display = 'none';
+        }
+    });
+}

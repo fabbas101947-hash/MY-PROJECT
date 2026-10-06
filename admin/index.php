@@ -18,6 +18,18 @@ try { $total_users = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn(); }
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4a1a1e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<script>
+// Make it installable
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('data:text/javascript;base64,' + btoa('self.addEventListener("fetch",()=>{})'));
+}
+</script>
     <title>Admin Dashboard - INQUIRE STORE</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
@@ -46,7 +58,7 @@ try { $total_users = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn(); }
             <h3>Menu</h3>
             <a href="index.php">📊 Dashboard</a>
             <a href="product.php">📦 Products</a>
-            <a href="inquiry.php">📩 Inquiries</a>
+            <a href="inquiries.php">📩 Inquiries</a>
             <a href="user.php">👤 Users</a>
             <a href="../index.html" target="_blank">🌐 View Website</a>
         </div>

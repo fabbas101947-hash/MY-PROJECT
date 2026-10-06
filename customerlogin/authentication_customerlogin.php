@@ -1,6 +1,7 @@
 <?php
+ini_set('display_errors', 1); error_reporting(E_ALL);
 session_start();
-require_once './config/database.php'; // your PDO file
+require_once '../config/database.php'; // your PDO file
 
 if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
@@ -21,8 +22,13 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             if(isset($_POST['remember'])){
                 setcookie("user_email", $email, time() + (86400 * 30), "/");
             }
+                    // --- LOG THE LOGIN ---
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $stmt_log = $pdo->prepare("INSERT INTO login_logs (user_id, email, ip_address) VALUES (:uid, :email, :ip)");
+        $stmt_log->execute(['uid' => $row['id'], 'email' => $email, 'ip' => $ip]);
+        // --- END LOG ---
 
-            header("Location: index.html"); // customer homepage
+            header("Location: ../index.html"); // customer homepage
             exit();
         } else {
             header("Location: login.html?error=invalid");
