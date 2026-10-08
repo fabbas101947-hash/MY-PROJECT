@@ -34,6 +34,8 @@ try {
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>
 
     <?php foreach ($rows as $r): ?>
@@ -50,6 +52,12 @@ try {
 
             <td>
                 <?= htmlspecialchars($r['email'] ?? '') ?>
+            </td>
+            <td>
+                <a href="update_user.php?id=<?= urlencode($r['id']) ?>"><button>Update</button></a>
+            </td>
+            <td>
+                <a href="delete_user.php?id=<?= urlencode($r['id']) ?>" onclick="return confirm('Are you sure you want to delete this user?')"><button>Delete</button></a>
             </td>
         </tr>
     <?php endforeach; ?>

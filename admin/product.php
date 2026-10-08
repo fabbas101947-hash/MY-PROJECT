@@ -30,8 +30,10 @@ a{color:#6c5ce7;text-decoration:none}
 <tr>
 <td><?= $p['id'] ?></td>
 <td><?= htmlspecialchars($p['name'] ?? $p['product_name'] ?? 'Item #'.$p['id']) ?></td>
-<td>$<?= $p['price'] ?></td>
-<td><a href="edit_product.php?id=<?= $p['id'] ?>">Edit</a> | <a href="delete_product.php?id=<?= $p['id'] ?>">Delete</a></td>
+<td>Rs. <?= number_format($p['price'], 0) ?> PKR</td>
+<td><a href="update.php?id=<?= $p['id'] ?>"><button>Update</button></a> 
+<a href="delete.php?id=<?= $p['id'] ?>" onclick="return confirm('Are you sure you want to delete this product?')"><button>Delete</button></a>
+</td>
 </tr>
 <?php endforeach; ?>
 </table>
