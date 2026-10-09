@@ -609,5 +609,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// ===== Accessibility: Set ARIA Labels =====
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((btn, index) => {
+        if (!btn.hasAttribute('aria-label')) {
+            btn.setAttribute('aria-label', `Button ${index + 1}`);
+        }
+    });
+});
+
+// ===== API INTEGRATION - PASTE HERE =====
+document.addEventListener('DOMContentLoaded', function() {
+    const productGrid = document.querySelector('.product-grid');
+    if (!productGrid) return;
+
+    fetch('api/products.php')
+        .then(res => res.json())
+        .then(products => {
+            if(!products || products.length === 0) return;
+            productGrid.innerHTML = '';
+            products.forEach(p => {
+                const discountPrice = Math.round(p.price * 0.6);
+                productGrid.innerHTML += `
+                    <div class="product-card" data-product-id="${p.id}" data-price="${p.price}" data-name="${p.name}">
+                        <div class="product-image"><img src="${p.image}" alt="${p.name}"></div>
+                        <div class="product-info">
+                            <h3>${p.name}</h3>
+                            <div class="price-stack"><strong>Rs ${p.price}</strong><span>After Discount: Rs ${discountPrice}</span></div>
+                            <button class="btn btn-primary btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            });
+        })
+        .catch(err => console.log('API failed, using static products', err));
+});
 
 console.log('INQUIRE Inventory Website - Initialized Successfully with LocalStorage & Cart Management');
